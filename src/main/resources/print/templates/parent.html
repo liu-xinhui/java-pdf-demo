@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${pdfFileName}"></title>
+    <style>
+        @page {
+            size: A4;
+            @top-center {
+                content: element(header);
+            }
+            @bottom-center {
+                content: element(footer);
+            }
+        }
+
+        body {
+            font-family: 'simsun', serif;
+        }
+
+        table {
+            -fs-table-paginate: paginate;
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid #555;
+            padding: 3px 5px;
+        }
+
+        th {
+            background-color: #eff3fa;
+        }
+
+        #page-header {
+            position: running(header);
+            border-bottom: 1px solid #555;
+            padding: 5px;
+        }
+
+        #page-header-text {
+            font-size: 16px;
+        }
+
+        #page-header-num:after {
+            float: right;
+            text-align: right;
+            content: counter(page) '/' counter(pages);
+        }
+
+        #page-footer {
+            position: running(footer);
+            background-color: red;
+            text-align: center;
+        }
+    </style>
+    <style th:include="${templateName}::style"></style>
+</head>
+<body>
+<div id="page-header">
+    <span id="page-header-text">可配置电子订单系统(CEOS)</span>
+    <span id="page-header-num"></span>
+</div>
+<div th:include="${templateName}::body"></div>
+</body>
+</html>
