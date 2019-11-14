@@ -12,7 +12,7 @@
     <artifactId>demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Java export PDF</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -54,12 +54,6 @@
             <!-- Required for PDF output. -->
             <groupId>com.openhtmltopdf</groupId>
             <artifactId>openhtmltopdf-pdfbox</artifactId>
-            <version>${openhtml.version}</version>
-        </dependency>
-        <dependency>
-            <!-- Required for image output only. -->
-            <groupId>com.openhtmltopdf</groupId>
-            <artifactId>openhtmltopdf-java2d</artifactId>
             <version>${openhtml.version}</version>
         </dependency>
     </dependencies>

@@ -1,4 +1,4 @@
-package com.step.pdf.demo;
+package com.step.pdf.demo.controller;
 
 import com.step.pdf.demo.util.PdfUtil;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class TestController {
+public class DemoController {
 
-    @GetMapping("download")
+    @GetMapping("pdf")
     public void test(HttpServletResponse response) throws Exception {
         Map<String, Object> variables = new HashMap<>();
         variables.put("name", "表格标题");

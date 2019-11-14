@@ -10,11 +10,12 @@
                 content: element(header);
             }
             @bottom-center {
-                content: element(footer);
+                content: '电子订单系统';
+                font-family: 'simsun', serif;
             }
         }
 
-        body {
+        html, body {
             font-family: 'simsun', serif;
         }
 
@@ -46,12 +47,6 @@
             float: right;
             text-align: right;
             content: counter(page) '/' counter(pages);
-        }
-
-        #page-footer {
-            position: running(footer);
-            background-color: red;
-            text-align: center;
         }
     </style>
     <style th:include="${templateName}::style"></style>
